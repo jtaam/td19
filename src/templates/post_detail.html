@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block head_title %}{{instance.title}} | {{ block.super}} {% endblock head_title %}
+{% block style %}
+h1{color:#666}
+{% endblock style%}
+{% block content %}
+<div class="col-sm-8 col-sm-offset-2">
+    {% if obj.image %}
+    <img src="{{instance.image.url}}" alt="" class="img-responsive">
+    {% endif %}
+    <h1>{{title}} <br><small>{{instance.timestamp}}</small></h1>
+    <p>{{instance.content|linebreaks}}</p>
+</div>
+{% endblock content %}
